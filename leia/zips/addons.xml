@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="script.asus.policy.rules" name="Policy Rules" provider-name="h0fnar" version="1.0.0">
+<addons><addon id="script.asus.policy.rules" name="Policy Rules" version="1.0.0" provider-name="h0fnar">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.requests" version="2.9.1" />
 	</requires>
-	<extension library="default.py" point="xbmc.python.script" />
+	<extension point="xbmc.python.script" library="default.py" />
 	<extension point="xbmc.addon.metadata">
 		<platform>all</platform>
 		<summary lang="en">Policy Rules management.</summary>
