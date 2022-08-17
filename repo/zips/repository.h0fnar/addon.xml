@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.h0fnar" name="h0fnar Repository" version="1.0" provider-name="h0fnar">
+    <extension point="xbmc.addon.repository" name="h0fnar Repository">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/h0fnar/repository.h0fnar/master/repo/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/h0fnar/repository.h0fnar/master/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/h0fnar/repository.h0fnar/master/repo/zips/</datadir>
+        </dir>
+        <dir minversion="18.0.0" maxversion="18.9.9">
+            <info compressed="false">https://raw.githubusercontent.com/h0fnar/repository.h0fnar/master/leia/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/h0fnar/repository.h0fnar/master/leia/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/h0fnar/repository.h0fnar/master/leia/zips/</datadir>
+        </dir>
+        <dir minversion="19.0.0">
+            <info compressed="false">https://raw.githubusercontent.com/h0fnar/repository.h0fnar/master/matrix/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/h0fnar/repository.h0fnar/master/matrix/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/h0fnar/repository.h0fnar/master/matrix/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>h0fnar Repository</summary>
+        <description>h0fnars Stuff</description>
+        <disclaimer></disclaimer>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>

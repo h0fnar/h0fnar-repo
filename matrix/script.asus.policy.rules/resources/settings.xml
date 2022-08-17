@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="Policy Rules">
+    	<setting label="Policy Rule 1" type="lsep"/>
+        <setting type="sep" />
+        <setting label="Land" type="text"   id="rule_1" default=""/>
+        <setting label="IP" type="ipaddress" id="ipaddress_1"/>
+        <setting type="sep" />
+        <setting label="Policy Rule 2" type="lsep"/>
+        <setting type="sep" />
+        <setting label="Land" type="text"   id="rule_2" default=""/>
+        <setting label="IP" type="ipaddress" id="ipaddress_2"/>
+        <setting label="Policy Rule 3" type="lsep"/>
+        <setting type="sep" />
+        <setting label="Land" type="text"   id="rule_3" default=""/>
+        <setting label="IP" type="ipaddress" id="ipaddress_3"/>
+        <setting type="sep" />
+        <setting label="No VPN !!!" type="lsep"/>
+        <setting label="IP" type="ipaddress" id="ipaddress_bypass"/>
+    </category>
+    <category label="Interface">
+        <setting label="Select Interface" type="lsep"/>
+        <setting label="Interface" type="enum" id="interface" values="wlan0|eth0" default="0"/>
+    </category>
+</settings>

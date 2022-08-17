@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon 	id="script.asus.policy.rules"
+		name="Policy Rules" version="1.0.0"
+		provider-name="h0fnar">
+	<requires>
+		<import addon="script.module.requests" version="2.9.1"/>
+	</requires>
+	<extension point="xbmc.python.script" library="default.py"/>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<assets>
+            <icon>icon.png</icon>
+        </assets>
+		<summary lang="en">Asuswrt-Merlin Policy Rules management.</summary>
+		<description lang="en">This addon allows you to change your ip to match your policy rules on asus wrt merlin.
+Only tested on Raspberry Pi.</description>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+  </extension>
+</addon>
