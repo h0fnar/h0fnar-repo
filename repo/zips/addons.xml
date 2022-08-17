@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="repository.h0fnar" name="h0fnar Repository" version="1.0" provider-name="h0fnar">
+<addons><addon id="repository.h0fnar" name="[COLOR limegreen][B]h0fnar[/B][/COLOR] Repository" version="1.0" provider-name="h0fnar">
     <extension point="xbmc.addon.repository" name="h0fnar Repository">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/h0fnar/repository.h0fnar/master/repo/zips/addons.xml</info>
@@ -18,7 +18,7 @@
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary>h0fnar Repository</summary>
+        <summary>Install h0fnars stuff</summary>
         <description>h0fnars Stuff</description>
         <disclaimer />
         <platform>all</platform>
