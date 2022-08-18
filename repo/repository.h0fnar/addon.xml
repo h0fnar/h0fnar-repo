@@ -3,7 +3,7 @@
     <extension point="xbmc.addon.repository" name="h0fnar repo">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/h0fnar/h0fnar-repo/master/repo/zips/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/h0fnar/repo/master/h0fnar-repo/zips/addons.xml.md5</checksum>
+            <checksum>https://raw.githubusercontent.com/h0fnar/h0fnar-repo/master/repo/zips/addons.xml.md5</checksum>
             <datadir zip="true">https://raw.githubusercontent.com/h0fnar/h0fnar-repo/master/repo/zips/</datadir>
         </dir>
         <dir minversion="18.0.0" maxversion="18.9.9">
