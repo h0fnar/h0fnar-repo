@@ -7,13 +7,13 @@
 	<extension point="xbmc.python.script" library="default.py"/>
 	<extension point="xbmc.addon.metadata">
 		<platform>all</platform>
+		<assets>
+            <icon>icon.png</icon>
+        </assets>
 		<summary lang="en">Policy Rules management.</summary>
 		<description lang="en">This addon allows you to change your ip to match your policy rules on asus wrt merlin.
 Only tested on Raspberry Pi.
 		</description>
 		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-		<assets>
-      		<icon>icon.png</icon>
-    	</assets>
   </extension>
 </addon>
