@@ -12,5 +12,8 @@
 Only tested on Raspberry Pi.
 		</description>
 		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<assets>
+      		<icon>icon.png</icon>
+    	</assets>
   </extension>
 </addon>
