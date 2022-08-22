@@ -174,7 +174,7 @@ def delete_zip_folders():
 
                     print(
                         "{} {} - {}".format(
-                            color_text("Removed", 'red'),
+                            color_text("Successfully removed", 'yellow'),
                             color_text(dir_temp, 'cyan'),
                             color_text(dir_size, 'yellow'),
                         )
@@ -189,7 +189,7 @@ def delete_zip_folders():
         if folders_count > 0:
             print(
                 "{} {} - {}".format(
-                    color_text("Removed", 'red'),
+                    color_text("Successfully removed", 'yellow'),
                     color_text(str(folders_count) + " zips folders", 'cyan'),
                     color_text(byte_count, 'yellow'),
                 )
@@ -222,7 +222,7 @@ def delete_repo_zip():
                     os.remove(repo)
                     print(
                         "{} {} - {}".format(
-                            color_text("Removed", 'red'),
+                            color_text("Successfully removed", 'yellow'),
                             color_text(repo_name, 'cyan'),
                             color_text(size, 'yellow'),
                         )
