@@ -11,7 +11,6 @@ channel_id = sys.argv[2]
 
 channel = "[COLOR darkorchid][B]" + channel + "[/B][/COLOR]"
 
-
 _scriptid_ = "plugin.video.1spot.media"
 _addon_ = xbmcaddon.Addon(id=_scriptid_)
 
@@ -55,7 +54,6 @@ def get_epg(channel_id):
     epg = ''.join(epg)
 
     if epg:
-
         xbmcgui.Dialog().textviewer(channel, epg)
     else:
         xbmcgui.Dialog().textviewer(channel, "Sorry no channel info at the moment!\nTry again later.")

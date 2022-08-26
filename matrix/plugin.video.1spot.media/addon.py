@@ -1,5 +1,5 @@
-from urllib import urlencode
-from urlparse import parse_qsl
+from urllib.parse import urlencode
+from urllib.parse import parse_qsl
 import requests
 import json
 import sys
@@ -31,28 +31,32 @@ def main():
     name = "[COLOR darkorchid][B]" + name + "[/B][/COLOR]"
     url = get_url(action='livestreams')
     is_folder = True
-    list_item = xbmcgui.ListItem(name, iconImage=icon, thumbnailImage=icon)
+    list_item = xbmcgui.ListItem(name)
+    list_item.setArt({'icon': icon})
     xbmcplugin.addDirectoryItem(_handle, url, list_item, is_folder)
 
     name = ("TV Shows")
     name = "[COLOR darkorchid][B]" + name + "[/B][/COLOR]"
     url = get_url(action='tvshows')
     is_folder = True
-    list_item = xbmcgui.ListItem(name, iconImage=icon, thumbnailImage=icon)
+    list_item = xbmcgui.ListItem(name)
+    list_item.setArt({'icon': icon})
     xbmcplugin.addDirectoryItem(_handle, url, list_item, is_folder)
 
     name = ("New Releases")
     name = "[COLOR darkorchid][B]" + name + "[/B][/COLOR]"
     url = get_url(action='newreleases')
     is_folder = True
-    list_item = xbmcgui.ListItem(name, iconImage=icon, thumbnailImage=icon)
+    list_item = xbmcgui.ListItem(name)
+    list_item.setArt({'icon': icon})
     xbmcplugin.addDirectoryItem(_handle, url, list_item, is_folder)
 
     name = ("Recommended")
     name = "[COLOR darkorchid][B]" + name + "[/B][/COLOR]"
     url = get_url(action='recommended')
     is_folder = True
-    list_item = xbmcgui.ListItem(name, iconImage=icon, thumbnailImage=icon)
+    list_item = xbmcgui.ListItem(name)
+    list_item.setArt({'icon': icon})
     xbmcplugin.addDirectoryItem(_handle, url, list_item, is_folder)
 
     get_cats()
@@ -64,7 +68,8 @@ def add_categories(name, href):
     name = "[COLOR darkorchid][B]" + name + "[/B][/COLOR]"
     url = get_url(action='categories', href=href)
     is_folder = True
-    list_item = xbmcgui.ListItem(name, iconImage=icon, thumbnailImage=icon)
+    list_item = xbmcgui.ListItem(name)
+    list_item.setArt({'icon': icon})
     xbmcplugin.addDirectoryItem(_handle, url, list_item, is_folder)
 
 
@@ -125,7 +130,7 @@ def list_categories(href, page):
 
         url = get_url(action='play', stream=stream)
         is_folder = False
-        list_item = xbmcgui.ListItem(title, iconImage=img, thumbnailImage=img)
+        list_item = xbmcgui.ListItem(title)
         list_item.setProperty('IsPlayable', 'true')
         list_item.setArt({'thumb' : img})
 
@@ -157,7 +162,7 @@ def list_categories(href, page):
         is_folder = True
         name = ("Next Page")
         name = "[COLOR darkorchid][B]" + name + "[/B][/COLOR]"
-        list_item = xbmcgui.ListItem(name, iconImage=icon, thumbnailImage=icon)
+        list_item = xbmcgui.ListItem(name)
         xbmcplugin.addDirectoryItem(_handle, url, list_item, is_folder)
 
     xbmcplugin.endOfDirectory(_handle)
@@ -190,20 +195,21 @@ def list_channels():
         channel = "[COLOR darkorchid][B]" + channel + "[/B][/COLOR]"
         channel = channel + "  -  " + epg
     
-        logo = parsed_json[i]['ChannelLogoSmall']['url']
-
+        logo = parsed_json[i]['ChannelLogoSmall']['downloadUrl']
+        
         stream = parsed_json[i]['HLSStream']['url']
 
         url = get_url(action='play', stream=stream)
         is_folder = False
-        list_item = xbmcgui.ListItem(channel, iconImage=logo, thumbnailImage=logo)
+        list_item = xbmcgui.ListItem(channel)
+        list_item.setArt({'icon' : logo, 'thumbnail' : logo})
         list_item.setProperty('IsPlayable', 'true')
 
         list_item.addContextMenuItems([
-                                    ("[COLOR darkorchid]Show Stream Schedule[/COLOR]", "XBMC.RunScript("+_script_path_+"channel_epg.py,"+channel_name+","+str(channel_id)+")")
+                                    ("[COLOR darkorchid]Show Stream Schedule[/COLOR]", "RunScript("+_script_path_+"channel_epg.py,"+channel_name+","+str(channel_id)+")")
                                     ])
 
-        list_item.setInfo('video', {'mediatype': 'video'}) #?
+        list_item.setInfo('video', {'mediatype': 'video'})
 
         xbmcplugin.addDirectoryItem(_handle, url, list_item, is_folder)
 
@@ -228,7 +234,7 @@ def list_series():
 
     while i <= max_guesses: 
 
-        title = parsed_json[i]['title']
+        title = parsed_json[i]['title'] 
         description = parsed_json[i]['description']
         if not description:
             description = ("Sorry no description!")
@@ -275,8 +281,8 @@ def list_series():
 
         url = get_url(action='season', sid=sid, poster=poster, banner=banner, description=description)
         is_folder = True
-        list_item = xbmcgui.ListItem(title, iconImage=poster, thumbnailImage=poster)
-        list_item.setArt({'fanart': banner, 'poster' : poster})
+        list_item = xbmcgui.ListItem(title)
+        list_item.setArt({'fanart': banner, 'poster' : poster, 'icon' : poster})
 
         info = {
                         'plot': description,
@@ -318,8 +324,8 @@ def list_season(sid, poster, banner, description):
 
         url = get_url(action='episode', sid=sid, poster=poster, banner=banner, season=s_id)
         is_folder = True
-        list_item = xbmcgui.ListItem(staffel, iconImage=poster, thumbnailImage=poster)
-        list_item.setArt({'fanart': banner, 'poster' : poster})
+        list_item = xbmcgui.ListItem(staffel)
+        list_item.setArt({'fanart': banner, 'poster' : poster, 'icon' : poster})
 
         info = {
                         'plot': description,
@@ -396,7 +402,7 @@ def list_episodes(sid, poster, banner, season):
 
         url = get_url(action='play', stream=stream)
         is_folder = False
-        list_item = xbmcgui.ListItem(title, iconImage=poster, thumbnailImage=poster)
+        list_item = xbmcgui.ListItem(title)
         list_item.setProperty('IsPlayable', 'true')
         list_item.setArt({'fanart': banner, 'thumb' : fanart, 'poster' : poster})
 
@@ -444,7 +450,7 @@ def new_release():
 
         url = get_url(action='play', stream=stream)
         is_folder = False
-        list_item = xbmcgui.ListItem(title, iconImage=img, thumbnailImage=img)
+        list_item = xbmcgui.ListItem(title)
         list_item.setProperty('IsPlayable', 'true')
         list_item.setArt({'thumb' : img})
 
@@ -492,7 +498,7 @@ def recommended():
 
         url = get_url(action='play', stream=stream)
         is_folder = False
-        list_item = xbmcgui.ListItem(title, iconImage=img, thumbnailImage=img)
+        list_item = xbmcgui.ListItem(title)
         list_item.setProperty('IsPlayable', 'true')
         list_item.setArt({'thumb' : img})
 

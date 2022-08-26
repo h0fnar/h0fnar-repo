@@ -1,5 +1,29 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="script.asus.policy.rules" name="Policy Rules" version="1.0.0" provider-name="h0fnar">
+<addons><addon id="plugin.video.1spot.media" name="1SpotMedia" version="1.0.0" provider-name="h0fnar">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+    <import addon="script.module.requests" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <assets>
+        <icon>icon.png</icon>
+    </assets>
+    <summary lang="en">Watch Jamaican Live TV and Radio</summary>
+    <description lang="en">Watch Jamaican Live TV and Radio, including TVJ, RETV, JNN, TVJSN, CVTV,
+RJR94FM, FAMEFM, and HITZ92 FM, POWER 106, MUSIC 99 in one spot.
+1Spotmedia is providing live stream and video on demand (VOD).
+Get the full experience of 1Spotmedia.
+
+This addon is not official.
+    </description>
+    <disclaimer lang="en">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.</disclaimer>
+    <license>GNU GPLv3</license>
+  </extension>
+</addon><addon id="script.asus.policy.rules" name="Policy Rules" version="1.0.0" provider-name="h0fnar">
 	<requires>
 		<import addon="script.module.requests" version="2.9.1" />
 	</requires>

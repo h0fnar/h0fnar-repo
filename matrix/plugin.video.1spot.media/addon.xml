@@ -4,8 +4,8 @@
        version="1.0.0"
        provider-name="h0fnar">
   <requires>
-    <import addon="xbmc.python"                     version="2.20.0"/>
-    <import addon="script.module.requests"          version="2.5.3"/>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.module.requests"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="addon.py">
     <provides>video</provides>
@@ -22,7 +22,6 @@ RJR94FM, FAMEFM, and HITZ92 FM, POWER 106, MUSIC 99 in one spot.
 Get the full experience of 1Spotmedia.
 
 This addon is not official.
-This version is no longer supported or maintained, use the Matrix version.
     </description>
     <disclaimer lang="en">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.</disclaimer>
     <license>GNU GPLv3</license>

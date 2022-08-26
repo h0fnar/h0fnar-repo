@@ -15,16 +15,16 @@
     <assets>
         <icon>icon.png</icon>
     </assets>
-    <summary lang="en">Watch Jamaican Live TV and Radio
-    </summary>
+    <summary lang="en">Watch Jamaican Live TV and Radio</summary>
     <description lang="en">Watch Jamaican Live TV and Radio, including TVJ, RETV, JNN, TVJSN, CVTV,
 RJR94FM, FAMEFM, and HITZ92 FM, POWER 106, MUSIC 99 in one spot.
 1Spotmedia is providing live stream and video on demand (VOD).
 Get the full experience of 1Spotmedia.
 
 This addon is not official.
+This version is no longer supported or maintained, use the Matrix version.
     </description>
     <disclaimer lang="en">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.</disclaimer>
-    <license>The MIT License (MIT)</license>
+    <license>GNU GPLv3</license>
   </extension>
 </addon>
