@@ -234,6 +234,7 @@ def list_series():
             description = ("Sorry no description!")
         description = description.replace("\n\n", ' ')
         description = description.strip()
+        description = description.encode('utf-8')
 
         try:
             seasons_count = parsed_json[i]['seasons_count']
@@ -242,6 +243,7 @@ def list_series():
             episodes_seasons = "[COLOR grey][B]" + episodes_seasons + "[/B][/COLOR]"
 
             description = episodes_seasons + "\n\n" + description
+            description = description.encode('utf-8')
         except:
             pass
 
@@ -298,9 +300,12 @@ def list_season(sid, poster, banner, description):
 
     main = ("https://www.1spotmedia.com/index.php/api/vod/get_seasons_episodes?id=")
     search = main + sid 
-
-    html = requests.get(search)
-    parsed_json = json.loads(html.text)
+   
+    try:
+        html = requests.get(search)
+        parsed_json = json.loads(html.text)
+    except:
+        pass
 
     results = parsed_json['seasons']
 
@@ -341,8 +346,11 @@ def list_episodes(sid, poster, banner, season):
     main = ("https://www.1spotmedia.com/index.php/api/vod/get_seasons_episodes?id=")
     search = main + sid
 
-    html = requests.get(search)
-    parsed_json = json.loads(html.text)
+    try:
+        html = requests.get(search)
+        parsed_json = json.loads(html.text)
+    except:
+        pass
 
     results = parsed_json['seasons'][season]['episodes']
 
